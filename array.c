@@ -17,7 +17,7 @@ void array_remover(struct array* a, void* el)
 	// Insira aqui o codigo da sua solucao do exercicio 3
 }
 
-void* array_buscar(struct array* ll, void* eln)
+void* array_buscar(struct array* a, void* eln)
 {
 	// Substitua o codigo abaixo pela sua solucao do exercicio 4
 	return NULL;
