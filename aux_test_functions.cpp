@@ -34,7 +34,7 @@ void aux_array_preencher(struct array* a, int(*compar)(void*, void*), int dados[
 		}
 	}
 
-	a->dados = (void**)malloc(a->tam_alocado*sizeof(struct array_el));
+	a->dados = (void**)malloc(a->tam_alocado*sizeof(void*));
 
 	for (i = 0; i < tam; i++)
 	{

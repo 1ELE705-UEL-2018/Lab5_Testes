@@ -1,10 +1,5 @@
 #pragma once
 
-struct array_el
-{
-	void* dado;
-};
-
 struct array
 {
 	void** dados;

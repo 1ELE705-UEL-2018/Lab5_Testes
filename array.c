@@ -7,12 +7,12 @@ void array_inicializar(struct array* ll, int(*compar)(void*, void*))
 	// Insira aqui o codigo da sua solucao do exercicio 1
 }
 
-void array_inserir_apos(struct array* a, struct array_el* el, void* eln)
+void array_inserir_apos(struct array* a, void* el, void* eln)
 {
 	// Insira aqui o codigo da sua solucao do exercicio 2
 }
 
-void array_remover(struct array* a, struct array_el* el)
+void array_remover(struct array* a, void* el)
 {
 	// Insira aqui o codigo da sua solucao do exercicio 3
 }
