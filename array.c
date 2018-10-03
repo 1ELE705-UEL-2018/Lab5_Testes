@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "array.h"
 
-void array_inicializar(struct array* ll, int(*compar)(void*, void*))
+void array_inicializar(struct array* a, int(*compar)(void*, void*))
 {
 	// Insira aqui o codigo da sua solucao do exercicio 1
 }
