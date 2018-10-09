@@ -12,7 +12,7 @@ TEST(aux_array_preencher, ArrayVazio)
 
 	aux_array_preencher(&a, intcmp, NULL, 0);
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(0, a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
@@ -28,14 +28,14 @@ TEST(aux_array_preencher, ArrayUmElemento)
 
 	aux_array_preencher(&a, intcmp, dados, sizeof(dados)/sizeof(int));
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(sizeof(dados)/sizeof(int), a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_EQ(&dados[i], a.dados[i]);
+		ASSERT_EQ(&dados[i], a.dados[i].dado);
 	}
 
 	aux_array_limpar(&a);
@@ -49,14 +49,14 @@ TEST(aux_array_preencher, ArrayDoisElementos)
 
 	aux_array_preencher(&a, intcmp, dados, sizeof(dados)/sizeof(int));
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(sizeof(dados)/sizeof(int), a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_EQ(&dados[i], a.dados[i]);
+		ASSERT_EQ(&dados[i], a.dados[i].dado);
 	}
 
 	aux_array_limpar(&a);
@@ -70,14 +70,14 @@ TEST(aux_array_preencher, ArrayTresElementos)
 
 	aux_array_preencher(&a, intcmp, dados, sizeof(dados)/sizeof(int));
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(sizeof(dados)/sizeof(int), a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_EQ(&dados[i], a.dados[i]);
+		ASSERT_EQ(&dados[i], a.dados[i].dado);
 	}
 
 
@@ -92,14 +92,14 @@ TEST(aux_array_preencher, ArrayQuatroElementos)
 
 	aux_array_preencher(&a, intcmp, dados, sizeof(dados)/sizeof(int));
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(sizeof(dados)/sizeof(int), a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_EQ(&dados[i], a.dados[i]);
+		ASSERT_EQ(&dados[i], a.dados[i].dado);
 	}
 
 	aux_array_limpar(&a);
@@ -113,14 +113,14 @@ TEST(aux_array_preencher, ArrayOitoElementos)
 
 	aux_array_preencher(&a, intcmp, dados, sizeof(dados)/sizeof(int));
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(sizeof(dados)/sizeof(int), a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_EQ(&dados[i], a.dados[i]);
+		ASSERT_EQ(&dados[i], a.dados[i].dado);
 	}
 
 	aux_array_limpar(&a);
@@ -134,14 +134,14 @@ TEST(aux_array_preencher, ArrayNoveElementos)
 
 	aux_array_preencher(&a, intcmp, dados, sizeof(dados)/sizeof(int));
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(sizeof(dados)/sizeof(int), a.tam);
 	ASSERT_EQ(16, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_EQ(&dados[i], a.dados[i]);
+		ASSERT_EQ(&dados[i], a.dados[i].dado);
 	}
 
 	aux_array_limpar(&a);

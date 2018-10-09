@@ -34,11 +34,11 @@ void aux_array_preencher(struct array* a, int(*compar)(void*, void*), int dados[
 		}
 	}
 
-	a->dados = (void**)malloc(a->tam_alocado*sizeof(void*));
+	a->dados = (struct array_el*)malloc(a->tam_alocado*sizeof(struct array_el*));
 
 	for (i = 0; i < tam; i++)
 	{
-		a->dados[i] = (void*)&dados[i];
+		a->dados[i].dado = (void*)&dados[i];
 	}
 }
 
@@ -63,7 +63,7 @@ int aux_array_iguais(const struct array* a1, const struct array* a2)
 
 	for (i = 0; i < a1->tam; i++)
 	{
-		if (a1->compar(a1->dados[i], a2->dados[i]) != 0)
+		if (a1->compar(a1->dados[i].dado, a2->dados[i].dado) != 0)
 		{
 			return i;
 		}

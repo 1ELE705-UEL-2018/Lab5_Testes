@@ -8,11 +8,11 @@ extern "C"
 
 TEST(array_inicializar, Inicializar)
 {
-	struct array a = { NULL, -1, 0, NULL };
+	struct array a = { NULL, 0, 0, NULL };
 
 	array_inicializar(&a, intcmp);
 
-	ASSERT_NE((void**)NULL, a.dados);
+	ASSERT_NE((struct array_el*)NULL, a.dados);
 	ASSERT_EQ(0, a.tam);
 	ASSERT_EQ(8, a.tam_alocado);
 	ASSERT_EQ(&intcmp, a.compar);
