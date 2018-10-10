@@ -50,7 +50,7 @@ TEST(ll_inserir_elemento_apos, ListaUmElementoInsereInicio)
 	aux_ll_limpar(&ll_depois);
 }
 
-TEST(ll_inserir_elemento_apos, ListaUmElementosInsereFim)
+TEST(ll_inserir_elemento_apos, ListaUmElementoInsereFim)
 {
 	struct lld ll, ll_depois;
 	int dados[2] = { 0, 1 }, dados_depois[2] = { 0, 1 };
