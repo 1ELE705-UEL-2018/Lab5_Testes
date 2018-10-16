@@ -21,7 +21,7 @@ TEST(ll_deletar, ListaVazia)
 
 	ll_deletar(ll);
 
-	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld)));
+	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld))) << "Erro: voce esqueceu de liberar a memoria da lista";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 }
@@ -46,10 +46,10 @@ TEST(ll_deletar, ListaUmElemento)
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_NE(0, memoria_foi_liberada(elementos[i], sizeof(struct lld)));
+		ASSERT_NE(0, memoria_foi_liberada(elementos[i], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento " << i << " da lista";
 	}
 
-	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld)));
+	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld))) << "Erro: voce esqueceu de liberar a memoria da lista";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 }
@@ -74,10 +74,10 @@ TEST(ll_deletar, ListaDoisElementos)
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_NE(0, memoria_foi_liberada(elementos[i], sizeof(struct lld)));
+		ASSERT_NE(0, memoria_foi_liberada(elementos[i], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento " << i << " da lista";
 	}
 
-	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld)));
+	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld))) << "Erro: voce esqueceu de liberar a memoria da lista";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 }
@@ -102,10 +102,10 @@ TEST(ll_deletar, ListaTresElementos)
 
 	for (i = 0; i < sizeof(dados)/sizeof(int); i++)
 	{
-		ASSERT_NE(0, memoria_foi_liberada(elementos[i], sizeof(struct lld)));
+		ASSERT_NE(0, memoria_foi_liberada(elementos[i], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento " << i << " da lista";
 	}
 
-	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld)));
+	ASSERT_NE(0, memoria_foi_liberada(ll, sizeof(struct lld))) << "Erro: voce esqueceu de liberar a memoria da lista";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 }

@@ -22,8 +22,9 @@ TEST(ll_remover, ListaUmElemento)
 
 	ll_remover(&ll, ll.inicio);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
-	ASSERT_NE(0, memoria_foi_liberada(elementos[0], sizeof(struct lld_el)));
+	ASSERT_NE(0, memoria_foi_liberada(elementos[0], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento removido";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 
@@ -48,8 +49,9 @@ TEST(ll_remover, ListaDoisElementosRemovePrimeiro)
 
 	ll_remover(&ll, ll.inicio);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
-	ASSERT_NE(0, memoria_foi_liberada(elementos[0], sizeof(struct lld_el)));
+	ASSERT_NE(0, memoria_foi_liberada(elementos[0], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento removido";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 
@@ -73,8 +75,9 @@ TEST(ll_remover, ListaDoisElementosRemoveUltimo)
 
 	ll_remover(&ll, ll.fim);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
-	ASSERT_NE(0, memoria_foi_liberada(elementos[1], sizeof(struct lld_el)));
+	ASSERT_NE(0, memoria_foi_liberada(elementos[1], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento removido";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 
@@ -98,8 +101,9 @@ TEST(ll_remover, ListaTresElementosRemovePrimeiro)
 
 	ll_remover(&ll, ll.inicio);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
-	ASSERT_NE(0, memoria_foi_liberada(elementos[0], sizeof(struct lld_el)));
+	ASSERT_NE(0, memoria_foi_liberada(elementos[0], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento removido";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 
@@ -123,8 +127,9 @@ TEST(ll_remover, ListaTresElementosRemoveUltimo)
 
 	ll_remover(&ll, ll.fim);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
-	ASSERT_NE(0, memoria_foi_liberada(elementos[2], sizeof(struct lld_el)));
+	ASSERT_NE(0, memoria_foi_liberada(elementos[2], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento removido";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 
@@ -148,8 +153,9 @@ TEST(ll_remover, ListaTresElementosRemoveMeio)
 
 	ll_remover(&ll, ll.inicio->prox);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
-	ASSERT_NE(0, memoria_foi_liberada(elementos[1], sizeof(struct lld_el)));
+	ASSERT_NE(0, memoria_foi_liberada(elementos[1], sizeof(struct lld_el))) << "Erro: voce esqueceu de liberar a memoria do elemento removido";
 
 	_CrtSetDbgFlag(tmpFlagOld);
 

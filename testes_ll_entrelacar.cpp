@@ -16,6 +16,7 @@ TEST(ll_entrelacar, ListasVaziaVazia)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -35,6 +36,7 @@ TEST(ll_entrelacar, ListasVaziaUmElemento)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -54,6 +56,7 @@ TEST(ll_entrelacar, ListasUmElementoVazia)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -74,6 +77,7 @@ TEST(ll_entrelacar, ListasUmElementoUmElemento)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -94,6 +98,7 @@ TEST(ll_entrelacar, ListasDoisElementosUmElemento)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -114,6 +119,7 @@ TEST(ll_entrelacar, ListasUmElementoDoisElementos)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -134,6 +140,7 @@ TEST(ll_entrelacar, ListasDoisElementosDoisElementos)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -154,6 +161,7 @@ TEST(ll_entrelacar, ListasUmElementoTresElementos)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -174,6 +182,7 @@ TEST(ll_entrelacar, ListasTresElementoUmElemento)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -194,6 +203,7 @@ TEST(ll_entrelacar, ListasDoisElementosTresElementos)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -214,6 +224,7 @@ TEST(ll_entrelacar, ListasTresElementosDoisElementos)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -234,6 +245,7 @@ TEST(ll_entrelacar, ListasTresElementosTresElementos)
 
 	ll_entrelacar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);

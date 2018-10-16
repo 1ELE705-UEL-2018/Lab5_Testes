@@ -34,7 +34,7 @@ void aux_array_preencher(struct array* a, int(*compar)(void*, void*), int dados[
 		}
 	}
 
-	a->dados = (struct array_el*)malloc(a->tam_alocado*sizeof(struct array_el*));
+	a->dados = (struct array_el*)malloc(a->tam_alocado * sizeof(struct array_el*));
 
 	for (i = 0; i < tam; i++)
 	{
@@ -44,7 +44,7 @@ void aux_array_preencher(struct array* a, int(*compar)(void*, void*), int dados[
 
 int aux_array_iguais(const struct array* a1, const struct array* a2)
 {
-	int i;
+	size_t i;
 
 	if (a1->compar != a2->compar)
 	{
@@ -80,7 +80,7 @@ void aux_array_limpar(struct array* a)
 	}
 }
 
-void aux_ll_preencher(struct lld* ll, int (*compar)(void*, void*), int dados[], int tam_lista, struct lld_el* elementos[])
+void aux_ll_preencher(struct lld* ll, int(*compar)(void*, void*), int dados[], int tam_lista, struct lld_el* elementos[])
 {
 	int i;
 
@@ -99,9 +99,9 @@ void aux_ll_preencher(struct lld* ll, int (*compar)(void*, void*), int dados[], 
 	else
 	{
 		elementos[0] = (struct lld_el*)malloc(sizeof(struct lld_el));
-		elementos[tam_lista-1] = (struct lld_el*)malloc(sizeof(struct lld_el));
+		elementos[tam_lista - 1] = (struct lld_el*)malloc(sizeof(struct lld_el));
 		ll->inicio = elementos[0];
-		ll->fim = elementos[tam_lista-1];
+		ll->fim = elementos[tam_lista - 1];
 	}
 
 	if (tam_lista > 1)
@@ -112,24 +112,62 @@ void aux_ll_preencher(struct lld* ll, int (*compar)(void*, void*), int dados[], 
 		}
 		elementos[0]->prox = elementos[1];
 
-		for (i = 1; i < tam_lista-1; i++)
+		for (i = 1; i < tam_lista - 1; i++)
 		{
-			elementos[i]->ant = elementos[i-1];
+			elementos[i]->ant = elementos[i - 1];
 			elementos[i]->dado = &dados[i];
-			if (elementos[i+1] == NULL)
+			if (elementos[i + 1] == NULL)
 			{
-				elementos[i+1] = (struct lld_el*)malloc(sizeof(struct lld_el));
+				elementos[i + 1] = (struct lld_el*)malloc(sizeof(struct lld_el));
 			}
-			elementos[i]->prox = elementos[i+1];
+			elementos[i]->prox = elementos[i + 1];
 		}
 
-		elementos[tam_lista-1]->ant = elementos[tam_lista-2];
+		elementos[tam_lista - 1]->ant = elementos[tam_lista - 2];
 	}
 
 	elementos[0]->ant = NULL;
 	elementos[0]->dado = &dados[0];
-	elementos[tam_lista-1]->dado = &dados[tam_lista-1];
-	elementos[tam_lista-1]->prox = NULL;
+	elementos[tam_lista - 1]->dado = &dados[tam_lista - 1];
+	elementos[tam_lista - 1]->prox = NULL;
+}
+
+int aux_ll_consistente(const struct lld* ll)
+{
+	struct lld_el* el;
+	struct lld_el* el_ant = NULL;
+	struct lld_el* el_prox = NULL;
+
+	int i;
+
+	if (ll->inicio && ll->inicio->ant != NULL)
+	{
+		return -2;
+	}
+
+	if (ll->fim && ll->fim->prox != NULL)
+	{
+		return -3;
+	}
+
+	for (i = 0, el = ll->inicio; el != NULL; el = el->prox)
+	{
+		if (el->prox && el->prox->ant != el)
+		{
+			return i;
+		}
+
+		i++;
+
+		el_ant = el;
+	}
+
+	if (el_ant != ll->fim)
+	{
+		return -4;
+	}
+
+	return -1;
 }
 
 int aux_ll_iguais(const struct lld* ll1, const struct lld* ll2)
@@ -193,8 +231,7 @@ int memoria_foi_liberada(void* arg, int tam)
 	return 1;
 }
 
-::testing::AssertionResult ArraysMatch(const struct array* a1,
-									   const struct array* a2)
+::testing::AssertionResult ArraysMatch(const struct array* a1, const struct array* a2)
 {
 	int res = aux_array_iguais(a1, a2);
 
@@ -213,10 +250,28 @@ int memoria_foi_liberada(void* arg, int tam)
 	}
 }
 
-::testing::AssertionResult LinkedListsMatch(const struct lld* a1,
-											const struct lld* a2)
+::testing::AssertionResult LinkedListConsistent(const struct lld* ll)
 {
-	int res = aux_ll_iguais(a1, a2);
+	int res = aux_ll_consistente(ll);
+
+	switch (res)
+	{
+		case -1:
+			return ::testing::AssertionSuccess();
+		case -2:
+			return ::testing::AssertionFailure() << "ll->inicio->ant != NULL";
+		case -3:
+			return ::testing::AssertionFailure() << "ll->fim->prox != NULL";
+		case -4:
+			return ::testing::AssertionFailure() << "Ultimo elemento da lista != ll->fim";
+		default:
+			return ::testing::AssertionFailure() << "Inconsistencia na posicao " << res << " da lista: el->prox->ant != el ou el->ant->prox != e";
+	}
+}
+
+::testing::AssertionResult LinkedListsMatch(const struct lld* ll1, const struct lld* ll2)
+{
+	int res = aux_ll_iguais(ll1, ll2);
 
 	switch (res)
 	{

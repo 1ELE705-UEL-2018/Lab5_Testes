@@ -42,6 +42,7 @@
     <ClCompile Include="testes_array_remover.cpp" />
     <ClCompile Include="testes_aux_array_iguais.cpp" />
     <ClCompile Include="testes_aux_array_preencher.cpp" />
+    <ClCompile Include="testes_aux_ll_consistente.cpp" />
     <ClCompile Include="testes_aux_ll_preencher.cpp" />
     <ClCompile Include="testes_ll_buscar.cpp" />
     <ClCompile Include="testes_ll_concatenar.cpp" />

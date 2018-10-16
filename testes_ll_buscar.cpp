@@ -47,6 +47,21 @@ TEST(ll_buscar, UmElementoExiste)
 	aux_ll_limpar(&ll);
 }
 
+TEST(ll_buscar, DoisElementosExistePrimeiroElemento)
+{
+	struct lld ll;
+	int dados[2] = { 0, 1 };
+	struct lld_el* elementos[sizeof(dados) / sizeof(int)];
+
+	int buscado = 0;
+
+	aux_ll_preencher(&ll, intcmp, dados, sizeof(dados) / sizeof(int), elementos);
+
+	ASSERT_EQ(elementos[0], ll_buscar(&ll, &buscado));
+
+	aux_ll_limpar(&ll);
+}
+
 TEST(ll_buscar, DoisElementosExisteSegundoElemento)
 {
 	struct lld ll;

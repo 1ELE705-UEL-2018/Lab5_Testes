@@ -15,6 +15,7 @@ TEST(ll_inverter, ListaVazia)
 
 	ll_inverter(&ll);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -33,6 +34,7 @@ TEST(ll_inverter, ListaUmElemento)
 
 	ll_inverter(&ll);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -51,6 +53,7 @@ TEST(ll_inverter, ListaDoisElementosDiferentes)
 
 	ll_inverter(&ll);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -69,6 +72,7 @@ TEST(ll_inverter, ListaDoisElementosIguais)
 
 	ll_inverter(&ll);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -87,6 +91,7 @@ TEST(ll_inverter, ListaTresElementos)
 
 	ll_inverter(&ll);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -105,6 +110,7 @@ TEST(ll_inverter, ListaQuatroElementos)
 
 	ll_inverter(&ll);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);

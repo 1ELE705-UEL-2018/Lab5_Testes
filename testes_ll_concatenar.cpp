@@ -16,6 +16,7 @@ TEST(ll_concatenar, ListasVaziaVazia)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -35,6 +36,7 @@ TEST(ll_concatenar, ListasVaziaUmElemento)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -54,6 +56,7 @@ TEST(ll_concatenar, ListasUmElementoVazia)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -74,6 +77,7 @@ TEST(ll_concatenar, ListasUmElementoUmElemento)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -94,6 +98,7 @@ TEST(ll_concatenar, ListasDoisElementosUmElemento)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -114,6 +119,7 @@ TEST(ll_concatenar, ListasUmElementoDoisElementos)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -134,6 +140,7 @@ TEST(ll_concatenar, ListasDoisElementosDoisElementos)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -154,6 +161,7 @@ TEST(ll_concatenar, ListasUmElementoTresElementos)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -174,6 +182,7 @@ TEST(ll_concatenar, ListasTresElementoUmElemento)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -194,6 +203,7 @@ TEST(ll_concatenar, ListasDoisElementosTresElementos)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -214,6 +224,7 @@ TEST(ll_concatenar, ListasTresElementosDoisElementos)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);
@@ -234,6 +245,7 @@ TEST(ll_concatenar, ListasTresElementosTresElementos)
 
 	ll_concatenar(&ll1, &ll2);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll1));
 	ASSERT_TRUE(LinkedListsMatch(&ll1, &ll_depois));
 
 	aux_ll_limpar(&ll1);

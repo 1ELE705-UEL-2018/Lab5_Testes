@@ -17,6 +17,7 @@ TEST(ll_inserir_apos, ListaVazia)
 
 	ll_inserir_apos(&ll, NULL, &dados[0]);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -35,6 +36,7 @@ TEST(ll_inserir_apos, ListaUmElementoInsereInicio)
 
 	ll_inserir_apos(&ll, NULL, &dados[0]);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -53,6 +55,7 @@ TEST(ll_inserir_apos, ListaUmElementoInsereFim)
 
 	ll_inserir_apos(&ll, ll.inicio, &dados[1]);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -71,6 +74,7 @@ TEST(ll_inserir_apos, ListaDoisElementosInsereInicio)
 
 	ll_inserir_apos(&ll, NULL, &dados[0]);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
@@ -89,6 +93,7 @@ TEST(ll_inserir_apos, ListaDoisElementosInsereMeio)
 
 	ll_inserir_apos(&ll, ll.inicio, &dados[2]);
 
+	ASSERT_TRUE(LinkedListConsistent(&ll));
 	ASSERT_TRUE(LinkedListsMatch(&ll, &ll_depois));
 
 	aux_ll_limpar(&ll);
